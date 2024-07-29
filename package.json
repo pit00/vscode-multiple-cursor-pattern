@@ -1,0 +1,87 @@
+{
+    "name": "multiple-cursor-pattern",
+    "displayName": "Cursor View Focus",
+    "description": "Focus the active cursor view at the bottom, center or top",
+    "version": "1.1.1",
+    "publisher": "pit00",
+    "icon": "images/mcp.png",
+    "bugs": "https://github.com/pit00/vscode-multiple-cursor-pattern/issues",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pit00/vscode-multiple-cursor-pattern"
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "multiple-cursor-pattern.mainBottom",
+                "title": "Bottom view of main (primary) cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.mainCenter",
+                "title": "Center view of main (primary) cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.mainTop",
+                "title": "Top view of main (primary) cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.recentBottom",
+                "title": "Bottom view of last created cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.recentCenter",
+                "title": "Center view of last created cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.recentTop",
+                "title": "Top view of last created cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.firstBottom",
+                "title": "Bottom view of first positioned cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.firstCenter",
+                "title": "Center view of first positioned cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.firstTop",
+                "title": "Top view of first positioned cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.finalBottom",
+                "title": "Bottom view of last positioned cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.finalCenter",
+                "title": "Center view of last positioned cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.finalTop",
+                "title": "Top view of last positioned cursor"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "@types/node": "^12.7.8",
+        "typescript": "^3.6.3",
+        "vscode": "^1.1.34"
+    }
+}
