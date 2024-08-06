@@ -2,7 +2,7 @@
     "name": "multiple-cursor-pattern",
     "displayName": "Multiple Cursor Pattern",
     "description": "Focus the active cursor view at the bottom, center or top",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "publisher": "pit00",
     "icon": "images/mcp.png",
     "bugs": "https://github.com/pit00/vscode-multiple-cursor-pattern/issues",
@@ -25,11 +25,11 @@
         "commands": [
             {
                 "command": "multiple-cursor-pattern.CursorEach",
-                "title": "When multiple cursor, return each N patten input"
+                "title": "Pattern: Cursor Each Line"
             },
             {
-                "command": "multiple-cursor-pattern.CursorSelectionEachN",
-                "title": "When selection, return each (line) N patten input"
+                "command": "multiple-cursor-pattern.CursorSelectionEach",
+                "title": "Pattern: Cursor Each Line Selected"
             }
         ]
     },
