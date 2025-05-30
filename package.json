@@ -30,6 +30,30 @@
             {
                 "command": "multiple-cursor-pattern.CursorSelectionEach",
                 "title": "Pattern: Cursor Each Line Selected"
+            },
+            {
+                "command": "multiple-cursor-pattern.RemoveFirst",
+                "title": "Remove first positioned multiple cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.RemoveLast",
+                "title": "Remove last positioned multiple cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.KeepFirst",
+                "title": "Keep first positioned cursor only"
+            },
+            {
+                "command": "multiple-cursor-pattern.KeepLast",
+                "title": "Keep last positioned cursor only"
+            },
+            {
+                "command": "multiple-cursor-pattern.OrderMult",
+                "title": "Reorder multiple cursor"
+            },
+            {
+                "command": "multiple-cursor-pattern.SelectSurroundingMinus",
+                "title": "Add cursors on surrounding selection"
             }
         ]
     },

@@ -7,35 +7,35 @@ export function activate(context: vscode.ExtensionContext) {
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.RemoveFirst", () => {
         RemoveFirst();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.RemoveLast", () => {
         RemoveLast();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.KeepFirst", () => {
         KeepFirst();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.KeepLast", () => {
         KeepLast();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.OrderMult", () => {
         OrderMult();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.SelectSurroundingMinus", () => {
         SelectSurroundingMinus();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.CursorEach", () => {
         CursorEach();
     });
-
+    
     disposable = vscode.commands.registerCommand("multiple-cursor-pattern.CursorSelectionEach", () => {
         CursorSelectionEach();
     });
-
+    
     context.subscriptions.push(disposable);
 }
 
@@ -74,6 +74,10 @@ async function KeepFirst() {
         first[0] = vscode.window.activeTextEditor.selections[0]
         vscode.window.activeTextEditor.selections = first;
     }
+}
+async function KeepFinal() {
+    OrderMult()
+    KeepLast()
 }
 
 async function KeepLast() {
@@ -131,7 +135,7 @@ async function CursorEach() {
             if (i < size)
                 index.push(i)
         }
-
+        
         vscode.window.activeTextEditor.selections = index.map(i => vscode.window.activeTextEditor.selections[i]);
     }
 }
@@ -153,7 +157,7 @@ async function CursorSelectionEach() {
             if (i < size)
                 index.push(i)
         }
-
+        
         vscode.window.activeTextEditor.selections = index.map(i => vscode.window.activeTextEditor.selections[i]);
     }
 }
