@@ -2,7 +2,7 @@
     "name": "multiple-cursor-pattern",
     "displayName": "Multiple Cursor Pattern",
     "description": "Focus the active cursor view at the bottom, center or top",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "publisher": "pit00",
     "icon": "images/mcp.png",
     "bugs": "https://github.com/pit00/vscode-multiple-cursor-pattern/issues",

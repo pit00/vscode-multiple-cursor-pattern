@@ -28,12 +28,12 @@ export function activate(context: vscode.ExtensionContext) {
         SelectSurroundingMinus();
     });
     
-    disposable = vscode.commands.registerCommand("multiple-cursor-pattern.CursorEach", () => {
-        CursorEach();
+    disposable = vscode.commands.registerCommand("multiple-cursor-pattern.CursorEach", (args) => {
+        CursorEach(args);
     });
     
-    disposable = vscode.commands.registerCommand("multiple-cursor-pattern.CursorSelectionEach", () => {
-        CursorSelectionEach();
+    disposable = vscode.commands.registerCommand("multiple-cursor-pattern.CursorSelectionEach", (args) => {
+        CursorSelectionEach(args);
     });
     
     context.subscriptions.push(disposable);
@@ -75,6 +75,7 @@ async function KeepFirst() {
         vscode.window.activeTextEditor.selections = first;
     }
 }
+
 async function KeepFinal() {
     OrderMult()
     KeepLast()
@@ -119,10 +120,14 @@ async function SelectSurroundingMinus() {
     }
 }
 
-async function CursorEach() {
+async function CursorEach(args) {
     let n;
-    n = await vscode.window.showInputBox({placeHolder: "Input a number > 1"})
-    n = Number(n)
+    if (args && args.input) {
+        n = args.input;
+    } else {
+        n = await vscode.window.showInputBox({ placeHolder: "Input a number > 1" });
+        n = Number(n);
+    }
     if(!Number.isInteger(n)){
         vscode.window.showInformationMessage("Not integer!");
         return(null)
@@ -140,10 +145,14 @@ async function CursorEach() {
     }
 }
 
-async function CursorSelectionEach() {
+async function CursorSelectionEach(args) {
     let n;
-    n = await vscode.window.showInputBox({placeHolder: "Input a number > 1"})
-    n = Number(n)
+    if (args && args.input) {
+        n = args.input;
+    } else {
+        n = await vscode.window.showInputBox({ placeHolder: "Input a number > 1" });
+        n = Number(n);
+    }
     if(!Number.isInteger(n)){
         vscode.window.showInformationMessage("Not integer!");
         return(null)
